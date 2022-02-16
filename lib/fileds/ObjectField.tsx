@@ -24,7 +24,6 @@ const TypeHelperComponent = defineComponent({
   props: FiledPropsDefine,
 });
 
-// type SchemaItemDefine = DefineComponent<typeof FiledPropsDefine>;
 type SchemaItemDefine = typeof TypeHelperComponent;
 export default defineComponent({
   name: "ObjectField",
@@ -50,7 +49,7 @@ export default defineComponent({
     };
     return () => {
       const { schema, rootSchema, value } = props;
-      console.log(schema,'=========222222schemaschema')
+      console.log(schema,'=====对象里的schema')
 
       const { SchemaItem } = context;
       const currentValue: any = isObject(value) ? value : {};
@@ -62,7 +61,7 @@ export default defineComponent({
       return Object.keys(properties).map((k: string, index: number) => (
         <SchemaItem
           schema={properties[k]}
-          rootSchema={rootSchema}
+          // rootSchema={rootSchema}
           value={currentValue[k]}
           key={index}
           onChange={(value: any) => handleChange(k, value)}

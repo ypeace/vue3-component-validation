@@ -17,7 +17,7 @@ export default {
       telephone: {
         title: 'telephone',
         type: 'string',
-        minLength: 10,
+        // minLength: 10,
       },
       staticArray: {
         title: 'staticArray',
@@ -71,7 +71,7 @@ export default {
     },
   },
   default: {
-    firstName: 'Chuck',
+    firstName: 'Chuck2',
     lastName: 'Norris',
     age: 75,
     telephone: "3333",

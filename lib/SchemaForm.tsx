@@ -1,5 +1,5 @@
-import { defineComponent, PropType ,provide, reactive} from "vue";
-import { Schema, SchemaTypes } from "./types";
+import { defineComponent, PropType ,provide} from "vue";
+import { Schema } from "./types";
 import SchemaItem from "./SchemaItem";
 import {SchemaFormContextKey} from './context'
 export default defineComponent({
@@ -17,8 +17,7 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props, { slots, emit, attrs }) {
-    console.log(SchemaItem, 999);
+  setup(props) { 
     const context = {
       SchemaItem,
     };
@@ -26,13 +25,14 @@ export default defineComponent({
     //   SchemaItem
     // })
     // let index =1;
-    provide(SchemaFormContextKey, context);
     // setInterval(()=>{
     //  context.SchemaItem =index++;
     // },500)
+    provide(SchemaFormContextKey, context);
+    
     return () => {
       const { schema, value } = props;
-      console.log(schema, "-----------schemaForm");
+      console.log(schema, "-----------schemaForm里的schema");
       const handleChange = (v: any) => {
         props.onChange(v);
       };

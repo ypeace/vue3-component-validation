@@ -72,15 +72,9 @@ function toJson(data: any) {
   return JSON.stringify(data, null, 2);
 }
 
-// const schema = {
-//   type: "string",
-// };
-
 export default defineComponent({
   setup() {
     const selectedRef: Ref<number> = ref(0);
-    // const schemaRef: Ref<any> = ref(schema);
-
     const demo: {
       schema: Schema | null;
       data: any;

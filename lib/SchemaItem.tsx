@@ -13,7 +13,9 @@ export default defineComponent({
     // eslint-disable-next-line
     const retrieveSchemaRef = computed(() => {
       const { schema, rootSchema, value } = props;
-
+    //   console.log(schema,11111);
+    //   console.log(rootSchema,2222);
+    //  console.log(retrieveSchema(schema, rootSchema, value),333)
       return retrieveSchema(schema, rootSchema, value);
     });
 
